@@ -201,6 +201,32 @@ section.layer{padding:120px 0;position:relative}
 .snapbtn.run img{animation:dash 2.4s ease-in-out infinite}
 .snapbtn.run:hover img{animation:none}
 @media (prefers-reduced-motion:reduce){.snapbtn.run img{animation:none}}
+
+.laptop{position:relative;margin:0 auto;max-width:620px}
+.laptop .lid{background:#1c1c1f;border-radius:18px 18px 6px 6px;padding:12px 12px 16px;box-shadow:0 0 0 1px rgba(255,255,255,.1),0 40px 80px -30px rgba(0,0,0,.7)}
+.laptop .cam{width:6px;height:6px;border-radius:50%;background:#3f3f46;margin:0 auto 8px}
+.laptop .screen{height:340px;overflow-y:auto;border-radius:6px;background:#fff;scrollbar-width:thin}
+.laptop .screen img{width:100%;height:auto;display:block}
+.laptop .base{height:14px;margin:0 -6%;background:linear-gradient(#3f3f46,#27272a);border-radius:0 0 16px 16px;position:relative}
+.laptop .base::before{content:"";position:absolute;left:50%;top:0;transform:translateX(-50%);width:18%;height:5px;border-radius:0 0 6px 6px;background:#18181b}
+.cap{font-size:12px;opacity:.55;margin-top:14px;text-align:center}
+.figure{padding:40px 0 100px}
+.figure .frame{border-radius:var(--r-xl);background:#18181b;padding:18px;box-shadow:0 0 0 1px rgba(255,255,255,.08)}
+.figure .frame img{width:100%;height:auto;display:block;border-radius:16px}
+.figure .head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:18px;color:#fafafa}
+.figure .head h3{margin:0;font-size:clamp(24px,2.6vw,32px);font-weight:500;letter-spacing:-0.04em}
+.tline{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
+.tline .card small{opacity:.55;font-size:12px;font-weight:500;letter-spacing:.02em;text-transform:uppercase}
+.tline .card b{display:block;font-size:26px;font-weight:500;letter-spacing:-0.04em;margin:6px 0}
+.tline .card span{font-size:13.5px;opacity:.75;line-height:1.45}
+.photo{display:grid;grid-template-columns:1fr 1.1fr;gap:12px;margin-top:12px;align-items:stretch}
+.photo .shot{border-radius:var(--r-xl);overflow:hidden;background:#fff}
+.photo .shot img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.flowline{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;font-size:13px}
+.flowline span{padding:8px 12px;border-radius:12px;background:#27272a}
+.flowline em{font-style:normal;opacity:.4;align-self:center}
+@media (max-width:860px){.tline,.photo{grid-template-columns:1fr}.laptop .screen{height:260px}}
+.results .tag{background:rgba(255,255,255,.1);color:#fafafa}
 /* reveal */
 .rv{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
 .rv.in{opacity:1;transform:none}
@@ -310,6 +336,11 @@ section.layer{padding:120px 0;position:relative}
   </div></div>
  </div>
 </section>
+<section class="figure dark" data-depth="5" data-label="Layer 05">
+ <div class="wrap rv"><div class="head"><h3>The workflow, as I designed it in June</h3><span class="lnum" style="opacity:.6;font-size:13px">From submission to a claim in the system</span></div>
+ <div class="frame"><img src="img/fnol-workflow.png" alt="Manuela's FNOL workflow design: reference number, JSON payload, HTTP trigger, email, SharePoint row, then the claims team steps"></div>
+ <p class="cap" style="color:#fafafa">Version one took staff from 20 minutes to 6. Automatic claim creation took it the rest of the way to zero.</p></div>
+</section>
 
 <section class="layer flip dark" data-depth="6" data-label="Layer 06">
  <div class="wrap">
@@ -360,12 +391,8 @@ section.layer{padding:120px 0;position:relative}
 <section class="layer dark" data-depth="9" data-label="Layer 09">
  <div class="wrap">
   <div class="copy rv"><div class="lnum">Layer 09 · Watching it</div><h2>If you can't see it, you can't improve it.</h2>
-   <p>Every click on "file a claim" and every submission is tracked. A live dashboard on our team portal shows what's coming in by day, status, department and state.</p><div class="apps" aria-label="Tools used"><span class="app"><img src="logos/google-analytics.png" alt="" onerror="this.remove()">Google Analytics</span><span class="app"><img src="logos/microsoft-clarity.png" alt="" onerror="this.remove()">Microsoft Clarity</span><span class="app"><img src="logos/power-bi.png" alt="" onerror="this.remove()">Power BI</span><span class="app"><img src="logos/sharepoint.png" alt="" onerror="this.remove()">SharePoint</span></div></div>
-  <div class="panel rv"><div class="dash">
-   <div class="box">Submissions by day<div class="bars"><i style="height:60%"></i><i style="height:25%"></i><i style="height:35%"></i><i style="height:30%"></i><i style="height:70%"></i><i style="height:100%"></i><i style="height:80%"></i><i style="height:45%"></i><i style="height:20%"></i><i style="height:55%"></i></div></div>
-   <div class="box">By department<div class="donut"></div></div>
-   <div class="ev"><code>file_claim_click</code><code>fnol_submit</code><code>phone_click</code><code>see_example</code></div>
-  </div><p style="font-size:12px;opacity:.5;margin:12px 0 0">Illustrative data.</p></div>
+   <p>Every click on "file a claim" and every submission is tracked. A live Power BI dashboard on our SharePoint team portal shows what's coming in by day, status, department and state.</p><div class="apps" aria-label="Tools used"><span class="app"><img src="logos/google-analytics.png" alt="" onerror="this.remove()">Google Analytics</span><span class="app"><img src="logos/microsoft-clarity.png" alt="" onerror="this.remove()">Microsoft Clarity</span><span class="app"><img src="logos/power-bi.png" alt="" onerror="this.remove()">Power BI</span><span class="app"><img src="logos/sharepoint.png" alt="" onerror="this.remove()">SharePoint</span></div></div>
+  <div class="panel rv" style="background:transparent;box-shadow:none;padding:0"><div class="laptop"><div class="lid"><div class="cam"></div><div class="screen" tabindex="0" aria-label="SNAP Central Hub on SharePoint, scrollable"><img src="img/sharepoint-hub.png" alt="SNAP Central Hub SharePoint page with the FNOL dashboard; customer data hidden"></div></div><div class="base"></div></div><p class="cap">Our team portal on SharePoint, with the live FNOL dashboard. Scroll inside the screen. Customer data hidden.</p></div>
  </div>
 </section>
 
@@ -386,12 +413,32 @@ section.layer{padding:120px 0;position:relative}
  <div class="wrap">
   <div class="lnum" style="opacity:.6;font-size:13px;font-weight:500">The result</div>
   <h2 class="rv">16% of claims now file themselves. Nobody even told them to.</h2>
-  <p class="lead rv">SNAP takes 570 to 600 claims a month, and each intake call used to take a person 17 to 25 minutes. The online form went live quietly: no ads, no announcement, not even on the front of the homepage. It still caught 16% of claims in its first months, and every one of those reaches the team with zero minutes of typing.</p>
+  <p class="lead rv">SNAP takes 570 to 600 claims a month, and each intake call used to take a person 17 to 25 minutes. I designed the flow in June and we deployed it in August, quietly: no ads, no announcement, not even on the front of the homepage. By November it was catching 16% of claims, and every one of those reaches the team with zero minutes of typing.</p>
   <div class="apps" aria-label="Tools used"><span class="app"><img src="logos/power-bi.png" alt="" onerror="this.remove()">Power BI</span><span class="app"><img src="logos/sharepoint.png" alt="" onerror="this.remove()">SharePoint</span></div>
   <div class="big rv">
    <div class="stat w"><b>20 → 0</b><span>minutes of staff typing per online claim</span></div>
    <div class="stat"><b>91–96</b><span>claims a month arriving through the form</span></div>
    <div class="stat"><b>310–480 h</b><span>of staff time freed a year, at today's adoption</span></div>
+  </div>
+  <div class="tline rv">
+   <div class="card"><small>June 2026</small><b>Designed</b><span>The workflow, the form logic and the edge-case rules.</span></div>
+   <div class="card"><small>August 2026</small><b>Deployed</b><span>Live on snapmga.com, quietly, with no promotion.</span></div>
+   <div class="card"><small>November 2026</small><b>Scaling fast</b><span>16% of all claims and climbing, three months in.</span></div>
+  </div>
+  <div class="photo rv">
+   <div class="card"><h4>The surprise: it was always about photos</h4><p class="sub">What we learned from listening to our own calls</p>
+    <p style="font-size:15px;line-height:1.55;opacity:.85;margin:0">Most of our call time wasn't the accident. It was asking people for pictures, and then waiting for them. So I added one simple step: show people exactly which photos to take, with examples of every angle.</p>
+    <div class="stat w" style="margin-top:18px"><b>75%</b><span>of online claims now arrive with photos ready</span></div>
+    <div class="flowline"><span>No photos?</span><em>→</em><span>Reminder email</span><em>→</em><span>QR code to Snap Dropbox</span><em>→</em><span>All photos at once</span><em>→</em><span>Faster settlement</span></div>
+   </div>
+   <div class="shot"><img src="img/photo-guide.png" alt="The photo step of the claim form in Spanish, showing front, rear, both sides, VIN, odometer and interior examples"></div>
+  </div>
+  <div class="photo rv" style="grid-template-columns:1.1fr 1fr">
+   <div class="shot" style="background:#1c1c1f"><img src="img/snap-dropbox.png" alt="Snap Dropbox secure upload page in dark navy and light versions" style="object-fit:contain;padding:10px"></div>
+   <div class="card"><h4>Snap Dropbox: no more photo by photo</h4><p class="sub">For everyone who didn't attach photos the first time</p>
+    <p style="font-size:15px;line-height:1.55;opacity:.85;margin:0">Before, people sent pictures one email at a time, and adjusters stitched them together. Now the reminder email carries a QR code to Snap Dropbox, a secure upload page I designed. Scan it, drop every photo, police report or medical bill in one go, tag what it is, and send it straight to claims.</p>
+    <div class="apps" style="margin-top:16px"><span class="tag">Up to 10 files</span><span class="tag">JPG · PNG · PDF · DOCX</span><span class="tag">Tagged by type</span><span class="tag">Secure upload</span></div>
+   </div>
   </div>
   <div class="rgrid">
    <div class="card rv"><h4>The math</h4><p class="sub">Monthly, low and high end of SNAP's real volume</p>
@@ -425,7 +472,8 @@ section.layer{padding:120px 0;position:relative}
 <section class="next" data-depth="12" data-label="Next step">
  <div class="wrap">
   <div class="lnum" style="opacity:.6;font-size:13px;font-weight:500">Next step</div>
-  <h2 class="rv">Give the flow a voice <span class="script" style="font-size:1.25em">with a heart</span>.</h2>
+  <h2 class="rv">Put it up front. Then give it a voice <span class="script" style="font-size:1.25em;white-space:nowrap">with a heart</span>.</h2>
+  <div class="steps rv" style="grid-template-columns:1fr 1fr;margin:0 0 28px"><div class="card"><small>Next · 01</small><b>Promote it on the landing page</b><span>16% found the form on their own. Next, "File a claim" goes front and center on snapmga.com, where every driver will see it first.</span></div><div class="card"><small>Next · 02</small><b>Give it a voice with ElevenLabs</b><span>For people who would rather talk than type, the same proven flow, spoken by a voice that sounds like it cares.</span></div></div>
   <p class="lead rv">We tried voice vendors, and none of them sounded like someone who cares. A person calling a claims line might have a small dent on a car they love, or they might be living through a tragedy. The voice that answers has to know the difference.</p>
   <p class="lead rv" style="margin-top:12px">So the next step isn't a new flow. It's the one we already proved right, the same questions, rules and handoff behind this form, spoken by a voice built with ElevenLabs.</p>
   <div class="apps" aria-label="Tools used"><span class="app"><img src="logos/elevenlabs.png" alt="" onerror="this.remove()">ElevenLabs</span></div>
