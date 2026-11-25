@@ -19,7 +19,7 @@
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;font-family:Satoshi,system-ui,sans-serif;color:var(--ink);letter-spacing:-0.01em;
- background:linear-gradient(180deg,#ffffff 0%,#ffffff 12%,#f4f4f5 24%,#e4e4e7 36%,#d4d4d8 41%,#27272a 46%,#151515 60%,#09090b 100%);}
+ background:#09090b;}
 .script{font-family:"Mazzy TM",cursive;font-weight:400;letter-spacing:0}
 a{color:inherit}
 .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
@@ -131,6 +131,64 @@ section.layer{padding:120px 0;position:relative}
 .sig{margin-top:56px;display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.12);padding-top:28px}
 .sig .script{font-size:64px;line-height:.9}
 .sig p{margin:0;font-size:13px;opacity:.6;max-width:32em;line-height:1.5}
+
+.apps{display:flex;flex-wrap:wrap;gap:6px;margin-top:18px}
+.app{display:inline-flex;align-items:center;gap:7px;height:30px;padding:0 12px 0 10px;border-radius:100px;background:#09090b;color:#fafafa;font-size:12.5px;font-weight:500;letter-spacing:-0.01em}
+.app img{width:16px;height:16px;object-fit:contain;filter:grayscale(1) brightness(1.6)}
+.dark .app,.results .app,.next .app{background:#fafafa;color:#09090b}
+.dark .app img,.results .app img,.next .app img{filter:grayscale(1) brightness(.2)}
+/* azure backlog */
+.ado{font-size:12.5px;width:100%;border-collapse:collapse}
+.ado th{font-weight:500;text-align:left;opacity:.55;padding:6px 8px;border-bottom:1px solid rgba(255,255,255,.12)}
+.ado td{padding:7px 8px;border-bottom:1px solid rgba(255,255,255,.06);white-space:nowrap}
+.ado td.t{white-space:normal}
+.ado .ep td{font-weight:500;background:rgba(255,255,255,.05)}
+.ado .us td.t{padding-left:30px;opacity:.8}
+.ado .f td.t{padding-left:18px}
+.st{display:inline-flex;align-items:center;gap:6px}.st i{width:7px;height:7px;border-radius:50%;background:#a1a1aa;display:inline-block}.st.a i{background:#fafafa}
+.kind{opacity:.55}
+/* results */
+.results,.next{padding:120px 0;color:#fafafa}
+.results h2,.next h2{font-weight:500;font-size:clamp(34px,4.4vw,56px);line-height:1;letter-spacing:-0.05em;margin:10px 0 16px;max-width:16em}
+.results p.lead,.next p.lead{font-size:17px;line-height:1.55;opacity:.8;max-width:38em;margin:0}
+.rgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:40px}
+.card{border-radius:var(--r-xl);background:#18181b;box-shadow:0 0 0 1px rgba(255,255,255,.08);padding:24px}
+.card h4{margin:0 0 4px;font-size:15px;font-weight:500}
+.card .sub{font-size:12.5px;opacity:.55;margin:0 0 16px}
+.math{width:100%;border-collapse:collapse;font-size:14px}
+.math th{text-align:right;font-weight:500;opacity:.55;font-size:12px;padding:6px 0 8px}
+.math th:first-child{text-align:left}
+.math td{padding:10px 0;border-top:1px solid rgba(255,255,255,.08);text-align:right;font-variant-numeric:tabular-nums}
+.math td:first-child{text-align:left;opacity:.8;padding-right:12px}
+.math tr.hi td{font-weight:700;font-size:16px}
+.big{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
+.big .stat b{font-size:40px}
+.donutwrap{display:flex;align-items:center;gap:22px}
+.legend{font-size:13px;line-height:1.9}
+.legend span{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:8px;vertical-align:-1px}
+.bars2{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;align-items:end;height:190px;margin-top:8px}
+.bar2{position:relative;display:flex;flex-direction:column;justify-content:flex-end;height:100%;cursor:default}
+.bar2 .v{font-size:13px;font-weight:500;margin-bottom:6px;text-align:center}
+.bar2 .b{border-radius:4px 4px 0 0;background:#52525b;transition:opacity .2s}
+.bar2.now .b{background:#fafafa}
+.bar2 .x{font-size:12px;opacity:.6;text-align:center;margin-top:8px;border-top:1px solid rgba(255,255,255,.2);padding-top:8px}
+.bars2:hover .bar2:not(:hover) .b{opacity:.45}
+.bars2 .bar2:last-child .tip{left:auto;right:0;transform:none}.bars2 .bar2:first-child .tip{left:0;transform:none}
+.tip{position:absolute;left:50%;bottom:calc(100% - 4px);transform:translateX(-50%);visibility:hidden;background:#fafafa;color:#09090b;font-size:12px;line-height:1.35;padding:8px 10px;border-radius:10px;width:170px;opacity:0;pointer-events:none;transition:opacity .15s;z-index:3}
+.bar2:hover .tip,.bar2:focus .tip{opacity:1;visibility:visible}
+.note{font-size:12px;opacity:.5;margin-top:14px;line-height:1.5}
+/* next */
+.wave{display:flex;align-items:center;gap:4px;height:64px;margin:28px 0}
+.wave i{flex:1;max-width:8px;border-radius:4px;background:#fafafa;opacity:.85}
+.spectrum{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
+.spectrum .card b{display:block;font-size:20px;font-weight:500;letter-spacing:-0.03em;margin-bottom:8px}
+.spectrum .card span{font-size:14px;line-height:1.5;opacity:.75}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:12px}
+.steps .card small{opacity:.5;font-size:12px;font-weight:500}
+.steps .card b{display:block;font-size:16px;font-weight:500;margin:6px 0}
+.steps .card span{font-size:13px;opacity:.7;line-height:1.45}
+@media (max-width:860px){.rgrid,.big,.spectrum,.steps{grid-template-columns:1fr}.donutwrap{flex-direction:column;align-items:flex-start}.ado td{white-space:normal}}
+
 /* reveal */
 .rv{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
 .rv.in{opacity:1;transform:none}
@@ -173,7 +231,7 @@ section.layer{padding:120px 0;position:relative}
  <div class="wrap">
   <div class="copy rv"><div class="lnum">Layer 01 · The front door</div><h2>First, people have to find it.</h2>
    <p>A form nobody can find doesn't exist. I designed and tested several ways to put "file a claim" in front of a driver: a hero button, a top banner, a split panel, a floating dock.</p>
-   <p>The claims page got its own card too: "Ready for a claim submission," with a single button.</p></div>
+   <p>The claims page got its own card too: "Ready for a claim submission," with a single button.</p><div class="apps" aria-label="Tools used"><span class="app"><img src="logos/vs-code.png" alt="" onerror="this.remove()">VS Code</span><span class="app"><img src="logos/html.png" alt="" onerror="this.remove()">HTML</span><span class="app"><img src="logos/css.png" alt="" onerror="this.remove()">CSS</span><span class="app"><img src="logos/google-analytics.png" alt="" onerror="this.remove()">Google Analytics</span><span class="app"><img src="logos/microsoft-clarity.png" alt="" onerror="this.remove()">Microsoft Clarity</span></div></div>
   <div class="panel rv"><div class="heroes">
    <div class="mini"><span class="lab">A · Centered CTA</span><div class="t">We got you covered.</div><span class="cta">File a claim →</span></div>
    <div class="mini"><span class="lab">B · Top banner</span><div class="t">We got you covered.</div><span class="cta">Start a claim</span></div>
@@ -186,7 +244,7 @@ section.layer{padding:120px 0;position:relative}
 <section class="layer flip" data-depth="2" data-label="Layer 02">
  <div class="wrap">
   <div class="copy rv"><div class="lnum">Layer 02 · Two languages</div><h2>Rewritten, not translated.</h2>
-   <p>Many of the drivers we serve in Texas and New Mexico think in Spanish first. The Spanish form isn't a translation layer. It's a second file, written side by side with the English one, by someone who lives in both languages.</p></div>
+   <p>Many of the drivers we serve in Texas and New Mexico think in Spanish first. The Spanish form isn't a translation layer. It's a second file, written side by side with the English one, by someone who lives in both languages.</p><div class="apps" aria-label="Tools used"><span class="app"><img src="logos/html.png" alt="" onerror="this.remove()">HTML</span><span class="app"><img src="logos/javascript.png" alt="" onerror="this.remove()">JavaScript</span><span class="app"><img src="logos/claude.png" alt="" onerror="this.remove()">Claude</span></div></div>
   <div class="panel rv"><div class="bi">
    <div><small>English</small><b>Tell us what happened.</b><span>If you don't know something, leave it blank.</span></div>
    <div><small>Español</small><b>Cuéntanos qué pasó.</b><span>Si no sabes algún dato, déjalo en blanco.</span></div>
@@ -197,7 +255,7 @@ section.layer{padding:120px 0;position:relative}
 <section class="layer" data-depth="3" data-label="Layer 03">
  <div class="wrap">
   <div class="copy rv"><div class="lnum">Layer 03 · Logic</div><h2>The form thinks so they don't have to.</h2>
-   <p>Most people don't know their policy number after a crash. So there's a door for that. Sections open and close depending on who's filling it out and what happened.</p></div>
+   <p>Most people don't know their policy number after a crash. So there's a door for that. Sections open and close depending on who's filling it out and what happened.</p><div class="apps" aria-label="Tools used"><span class="app"><img src="logos/javascript.png" alt="" onerror="this.remove()">JavaScript</span><span class="app"><img src="logos/html.png" alt="" onerror="this.remove()">HTML</span><span class="app"><img src="logos/vs-code.png" alt="" onerror="this.remove()">VS Code</span></div></div>
   <div class="panel rv"><div class="logic">
    <div class="node">Do you have the policy number? <em>step 02</em></div>
    <div class="branch">
@@ -216,7 +274,7 @@ section.layer{padding:120px 0;position:relative}
 <section class="layer flip" data-depth="4" data-label="Layer 04">
  <div class="wrap">
   <div class="copy rv"><div class="lnum">Layer 04 · Edge cases</div><h2>Real life doesn't follow the happy path.</h2>
-   <p>We kept a shared board with our vendor partner for every strange real-world case. Each card became a rule, each rule was confirmed by both sides before it shipped. More than thirty so far.</p></div>
+   <p>We kept a shared ClickUp board with our vendor partner for every strange real-world case. Each card became a rule, each rule was confirmed by both sides before it shipped. More than thirty so far.</p><div class="apps" aria-label="Tools used"><span class="app"><img src="logos/clickup.png" alt="" onerror="this.remove()">ClickUp</span><span class="app"><img src="logos/inaza.png" alt="" onerror="this.remove()">Inaza</span></div></div>
   <div class="panel rv"><div class="board">
    <div class="col"><h5>Vendor review <span>3</span></h5><div class="c">Late-reported claim: vehicle no longer on the policy<br><span class="pill">Needs SNAP</span></div></div>
    <div class="col"><h5>Blocked <span>6</span></h5><div class="c">Attorney represents multiple parties<br><span class="pill">Needs SNAP</span></div><div class="c">Phone numbers need 10 digits<br><span class="pill b">Form v2.20</span></div></div>
@@ -229,7 +287,7 @@ section.layer{padding:120px 0;position:relative}
 <section class="layer dark" data-depth="5" data-label="Layer 05">
  <div class="wrap">
   <div class="copy rv"><div class="lnum">Layer 05 · The pipe</div><h2>Every submission takes the same five steps.</h2>
-   <p>When someone hits submit, an automation catches the data, parses it, reshapes it, emails the claims team and writes a record to our internal list. No copy and paste, every run logged.</p></div>
+   <p>When someone hits submit, an automation catches the data, parses it, reshapes it, emails the claims team and writes a record to our internal list. No copy and paste, every run logged.</p><div class="apps" aria-label="Tools used"><span class="app"><img src="logos/power-automate.png" alt="" onerror="this.remove()">Power Automate</span><span class="app"><img src="logos/sharepoint.png" alt="" onerror="this.remove()">SharePoint</span><span class="app"><img src="logos/outlook.png" alt="" onerror="this.remove()">Outlook</span></div></div>
   <div class="panel rv"><div class="flow">
    <div class="s"><i></i>Submission received</div><div class="ln"></div>
    <div class="s"><i></i>Parse JSON</div><div class="ln"></div>
@@ -244,7 +302,7 @@ section.layer{padding:120px 0;position:relative}
 <section class="layer flip dark" data-depth="6" data-label="Layer 06">
  <div class="wrap">
   <div class="copy rv"><div class="lnum">Layer 06 · The handoff</div><h2>From a form to a real claim.</h2>
-   <p>Our vendor partner Inaza checks every submission against rules SNAP sets. If it passes, the claim is created in our core system and an FNOL report goes out, and the right coverages open on their own based on what happened.</p></div>
+   <p>Our vendor partner Inaza checks every submission against rules SNAP sets. If it passes, the claim is created in our core system and an FNOL report goes out, and the right coverages open on their own based on what happened.</p><div class="apps" aria-label="Tools used"><span class="app"><img src="logos/inaza.png" alt="" onerror="this.remove()">Inaza</span><span class="app"><img src="logos/modotech.png" alt="" onerror="this.remove()">Modotech</span></div></div>
   <div class="panel rv">
    <div class="pipe"><div>Form</div><span>→</span><div>Rules check</div><span>→</span><div>Claim created</div></div>
    <div class="chips"><span class="chip">PD liability</span><span class="chip">Bodily injury</span><span class="chip">PIP</span><span class="chip">Collision</span><span class="chip">Comprehensive</span><span class="chip">Rental</span><span class="chip">Towing</span></div>
@@ -255,7 +313,7 @@ section.layer{padding:120px 0;position:relative}
 <section class="layer dark" data-depth="7" data-label="Layer 07">
  <div class="wrap">
   <div class="copy rv"><div class="lnum">Layer 07 · Release discipline</div><h2>Twenty-one versions, zero surprises.</h2>
-   <p>The form lives in a repository shared with Inaza. Every change bumps the version and adds a changelog entry, or the build stops. A test page gets every release first. Only then does it go live.</p></div>
+   <p>The form lives in a repository shared with Inaza. Every change bumps the version and adds a changelog entry, or the build stops. A test page gets every release first. Only then does it go live.</p><div class="apps" aria-label="Tools used"><span class="app"><img src="logos/github.png" alt="" onerror="this.remove()">GitHub</span><span class="app"><img src="logos/github-pages.png" alt="" onerror="this.remove()">GitHub Pages</span><span class="app"><img src="logos/github-actions.png" alt="" onerror="this.remove()">GitHub Actions</span><span class="app"><img src="logos/python.png" alt="" onerror="this.remove()">Python</span><span class="app"><img src="logos/claude.png" alt="" onerror="this.remove()">Claude</span></div></div>
   <div class="panel rv"><div class="ver">
    <div class="v"><b>v2.20</b><span><span class="k">Added</span>First and last name in separate boxes for every person</span></div>
    <div class="v"><b>v2.1x</b><span><span class="k">Changed</span>10-digit phone numbers everywhere</span></div>
@@ -267,21 +325,30 @@ section.layer{padding:120px 0;position:relative}
 
 <section class="layer flip dark" data-depth="8" data-label="Layer 08">
  <div class="wrap">
-  <div class="copy rv"><div class="lnum">Layer 08 · The backlog</div><h2>Every field is a feature with an owner.</h2>
-   <p>Behind the form is a product backlog: epics, features and user stories, from policy lookup and duplicate-claim detection to escalation, compliance and tone of voice.</p></div>
-  <div class="panel rv"><div class="tree">
-   <div class="e">Epic · Data capture &amp; validation</div>
-   <div class="f">Policy search &amp; validation</div><div class="f">Loss details · Police info · Parties</div><div class="f">Injury · Vehicles · Property damage</div>
-   <div class="e">Epic · Backend behavior</div>
-   <div class="f">Core system &amp; policy integration</div><div class="f">Escalation &amp; compliance</div><div class="f">Monitoring · Customer experience &amp; tone</div>
-  </div></div>
+  <div class="copy rv"><div class="lnum">Layer 08 · The backlog</div><h2>One architecture for every user story.</h2>
+   <p>Before a single field existed, I mapped the whole intake in Azure DevOps: epics, features and user stories, from policy lookup and duplicate-claim detection to escalation, compliance and tone of voice.</p>
+   <p>The point was one structure that every user story fits into, so the same architecture could carry the form today, the voice agent tomorrow and our underwriting document review next to it.</p><div class="apps" aria-label="Tools used"><span class="app"><img src="logos/azure-devops.png" alt="" onerror="this.remove()">Azure DevOps</span></div></div>
+  <div class="panel rv" style="overflow-x:auto"><table class="ado">
+   <thead><tr><th>#</th><th>Type</th><th>Title</th><th>State</th><th>P</th></tr></thead>
+   <tbody>
+    <tr class="ep"><td>1</td><td class="kind">Epic</td><td class="t">FNOL E1 · Data capture &amp; validation</td><td><span class="st a"><i></i>Active</span></td><td>2</td></tr>
+    <tr class="f"><td></td><td class="kind">Feature</td><td class="t">F-01 · Policy search &amp; validation</td><td><span class="st"><i></i>New</span></td><td>2</td></tr>
+    <tr class="us"><td></td><td class="kind">Story</td><td class="t">US-01.1 · Policy lookup</td><td><span class="st"><i></i>New</span></td><td>2</td></tr>
+    <tr class="us"><td></td><td class="kind">Story</td><td class="t">US-01.2 · Duplicate claim detection</td><td><span class="st"><i></i>New</span></td><td>2</td></tr>
+    <tr class="f"><td></td><td class="kind">Feature</td><td class="t">F-00 · Caller intake &amp; routing (voice / chat)</td><td><span class="st"><i></i>New</span></td><td>2</td></tr>
+    <tr class="f"><td></td><td class="kind">Feature</td><td class="t">F-02 to F-09 · Loss details, police, parties, injury, vehicles, property, attorneys, submission</td><td><span class="st"><i></i>New</span></td><td>2</td></tr>
+    <tr class="ep"><td>2</td><td class="kind">Epic</td><td class="t">FNOL E2 · Backend system behavior</td><td><span class="st"><i></i>New</span></td><td>4</td></tr>
+    <tr class="f"><td></td><td class="kind">Feature</td><td class="t">F-20 to F-25 · Core system integration, escalation &amp; compliance, transcription &amp; QA, monitoring, customer experience &amp; tone, operations</td><td><span class="st"><i></i>New</span></td><td>2</td></tr>
+    <tr class="ep"><td>3</td><td class="kind">Epic</td><td class="t">RD E1 · Review document validation</td><td><span class="st"><i></i>New</span></td><td>1</td></tr>
+    <tr class="f"><td></td><td class="kind">Feature</td><td class="t">Discounts, licenses, photos &amp; inspections, evidence, medical statements</td><td><span class="st"><i></i>New</span></td><td>1</td></tr>
+   </tbody></table></div>
  </div>
 </section>
 
 <section class="layer dark" data-depth="9" data-label="Layer 09">
  <div class="wrap">
   <div class="copy rv"><div class="lnum">Layer 09 · Watching it</div><h2>If you can't see it, you can't improve it.</h2>
-   <p>Every click on "file a claim" and every submission is tracked. A live dashboard on our team portal shows what's coming in by day, status, department and state.</p></div>
+   <p>Every click on "file a claim" and every submission is tracked. A live dashboard on our team portal shows what's coming in by day, status, department and state.</p><div class="apps" aria-label="Tools used"><span class="app"><img src="logos/google-analytics.png" alt="" onerror="this.remove()">Google Analytics</span><span class="app"><img src="logos/microsoft-clarity.png" alt="" onerror="this.remove()">Microsoft Clarity</span><span class="app"><img src="logos/power-bi.png" alt="" onerror="this.remove()">Power BI</span><span class="app"><img src="logos/sharepoint.png" alt="" onerror="this.remove()">SharePoint</span></div></div>
   <div class="panel rv"><div class="dash">
    <div class="box">Submissions by day<div class="bars"><i style="height:60%"></i><i style="height:25%"></i><i style="height:35%"></i><i style="height:30%"></i><i style="height:70%"></i><i style="height:100%"></i><i style="height:80%"></i><i style="height:45%"></i><i style="height:20%"></i><i style="height:55%"></i></div></div>
    <div class="box">By department<div class="donut"></div></div>
@@ -294,7 +361,7 @@ section.layer{padding:120px 0;position:relative}
  <div class="wrap">
   <div class="copy rv"><div class="lnum">Layer 10 · The decision</div><h2>The deepest layer is a no.</h2>
    <p>We didn't start with a form. We started with an AI voice agent. I tested it against 14 real-call scenarios, compared two versions, and recommended we not launch it.</p>
-   <p>Saying no to the shiny thing is what made room for the simple one.</p></div>
+   <p>Saying no to the shiny thing is what made room for the simple one.</p><div class="apps" aria-label="Tools used"><span class="app"><img src="logos/retell-ai.png" alt="" onerror="this.remove()">Retell AI</span><span class="app"><img src="logos/inaza.png" alt="" onerror="this.remove()">Inaza</span><span class="app"><img src="logos/excel.png" alt="" onerror="this.remove()">Excel</span></div></div>
   <div class="panel rv"><div class="logic">
    <div class="node" style="background:#3f3f46">AI voice agent <em style="color:#a1a1aa">14 scenarios · V1 vs V2</em></div>
    <div class="node" style="background:#3f3f46">Recommendation <em style="color:#a1a1aa">No-go</em></div>
@@ -303,14 +370,64 @@ section.layer{padding:120px 0;position:relative}
  </div>
 </section>
 
-<section class="finale" data-depth="11" data-label="Result">
+<section class="results" data-depth="11" data-label="Results">
  <div class="wrap">
   <div class="lnum" style="opacity:.6;font-size:13px;font-weight:500">The result</div>
-  <h2 class="rv">A form is the tip. <span class="script" style="font-size:1.2em">This is</span> the iceberg.</h2>
-  <div class="stats rv">
-   <div class="stat w"><b>20 → 0</b><span>minutes of staff typing per new claim</span></div>
-   <div class="stat"><b>16%</b><span>of SNAP's 570–600 monthly claims already filed online, after a soft launch with no promotion</span></div>
-   <div class="stat"><b>21</b><span>versioned releases, each tested before going live</span></div>
+  <h2 class="rv">16% of claims now file themselves. Nobody even told them to.</h2>
+  <p class="lead rv">SNAP takes 570 to 600 claims a month, and each intake call used to take a person 17 to 25 minutes. The online form went live quietly: no ads, no announcement, not even on the front of the homepage. It still caught 16% of claims in its first months, and every one of those reaches the team with zero minutes of typing.</p>
+  <div class="apps" aria-label="Tools used"><span class="app"><img src="logos/power-bi.png" alt="" onerror="this.remove()">Power BI</span><span class="app"><img src="logos/sharepoint.png" alt="" onerror="this.remove()">SharePoint</span></div>
+  <div class="big rv">
+   <div class="stat w"><b>20 → 0</b><span>minutes of staff typing per online claim</span></div>
+   <div class="stat"><b>91–96</b><span>claims a month arriving through the form</span></div>
+   <div class="stat"><b>310–480 h</b><span>of staff time freed a year, at today's adoption</span></div>
+  </div>
+  <div class="rgrid">
+   <div class="card rv"><h4>The math</h4><p class="sub">Monthly, low and high end of SNAP's real volume</p>
+    <table class="math">
+     <thead><tr><th></th><th>Low</th><th>High</th></tr></thead>
+     <tbody>
+      <tr><td>Claims per month</td><td>570</td><td>600</td></tr>
+      <tr><td>Minutes per intake call</td><td>17</td><td>25</td></tr>
+      <tr><td>Total intake time, all by phone</td><td>161 h</td><td>250 h</td></tr>
+      <tr><td>Filed online (16%)</td><td>91</td><td>96</td></tr>
+      <tr class="hi"><td>Staff time freed per month</td><td>26 h</td><td>40 h</td></tr>
+      <tr><td>Per year</td><td>310 h</td><td>480 h</td></tr>
+     </tbody></table>
+    <p class="note">That's 8 to 12 full work weeks a year, from a form nobody has promoted yet.</p></div>
+   <div class="card rv"><h4>Where claims come from today</h4><p class="sub">Share of monthly claims by channel</p>
+    <div class="donutwrap">
+     <svg width="150" height="150" viewBox="0 0 42 42" role="img" aria-label="16% online form, 84% phone">
+      <circle cx="21" cy="21" r="15.9" fill="none" stroke="#3f3f46" stroke-width="6"/>
+      <circle cx="21" cy="21" r="15.9" fill="none" stroke="#fafafa" stroke-width="6" stroke-dasharray="16 84" stroke-dashoffset="25"/>
+      <text x="21" y="23.5" text-anchor="middle" fill="#fafafa" font-size="8" font-weight="500" font-family="Satoshi">16%</text>
+     </svg>
+     <div class="legend"><div><span style="background:#fafafa"></span>Online form · 16%</div><div><span style="background:#3f3f46"></span>Phone intake · 84%</div></div>
+    </div>
+    <h4 style="margin-top:26px">Hours freed per month as adoption grows</h4><p class="sub">At the midpoint: 585 claims, 21 minutes each. Hover a bar.</p>
+    <div class="bars2"><div class="bar2 now" tabindex="0"><span class="tip">Today: 16% of ~585 claims filed online × 21 min average = about 33 staff hours freed a month.</span><div class="v">33h</div><div class="b" style="height:42px"></div><div class="x">Today</div></div><div class="bar2" tabindex="0"><span class="tip">Projection: if a quarter of claims came in online, about 51 hours a month.</span><div class="v">51h</div><div class="b" style="height:65px"></div><div class="x">25%</div></div><div class="bar2" tabindex="0"><span class="tip">Projection: at 40% online adoption, about 82 hours a month.</span><div class="v">82h</div><div class="b" style="height:104px"></div><div class="x">40%</div></div><div class="bar2" tabindex="0"><span class="tip">Projection: if half of claims came in online, about 102 hours a month.</span><div class="v">102h</div><div class="b" style="height:130px"></div><div class="x">50%</div></div></div>
+    <p class="note">Only "Today" is measured. The other bars are projections from the same math, not results.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="next" data-depth="12" data-label="Next step">
+ <div class="wrap">
+  <div class="lnum" style="opacity:.6;font-size:13px;font-weight:500">Next step</div>
+  <h2 class="rv">Give the flow a voice <span class="script" style="font-size:1.25em">with a heart</span>.</h2>
+  <p class="lead rv">We tried voice vendors, and none of them sounded like someone who cares. A person calling a claims line might have a small dent on a car they love, or they might be living through a tragedy. The voice that answers has to know the difference.</p>
+  <p class="lead rv" style="margin-top:12px">So the next step isn't a new flow. It's the one we already proved right, the same questions, rules and handoff behind this form, spoken by a voice built with ElevenLabs.</p>
+  <div class="apps" aria-label="Tools used"><span class="app"><img src="logos/elevenlabs.png" alt="" onerror="this.remove()">ElevenLabs</span></div>
+  <div class="wave rv" aria-hidden="true"><i style="height:18%"></i><i style="height:30%"></i><i style="height:52%"></i><i style="height:40%"></i><i style="height:70%"></i><i style="height:90%"></i><i style="height:64%"></i><i style="height:38%"></i><i style="height:56%"></i><i style="height:82%"></i><i style="height:100%"></i><i style="height:74%"></i><i style="height:46%"></i><i style="height:28%"></i><i style="height:60%"></i><i style="height:86%"></i><i style="height:66%"></i><i style="height:42%"></i><i style="height:24%"></i><i style="height:36%"></i><i style="height:58%"></i><i style="height:80%"></i><i style="height:62%"></i><i style="height:34%"></i><i style="height:20%"></i><i style="height:44%"></i><i style="height:68%"></i><i style="height:50%"></i><i style="height:30%"></i><i style="height:16%"></i></div>
+  <div class="spectrum rv">
+   <div class="card"><b>A small bump</b><span>Light, quick and reassuring. Get the details, say what happens next, let them get on with their day.</span></div>
+   <div class="card"><b>A bad day</b><span>Slower and steadier. Check that everyone is safe before asking about the car.</span></div>
+   <div class="card"><b>A tragedy</b><span>No script-reading. Fewer questions, more silence, and a human on the line as fast as possible.</span></div>
+  </div>
+  <div class="steps rv">
+   <div class="card"><small>01</small><b>Same brain</b><span>Reuse the form's questions, 30+ edge-case rules and the Azure DevOps architecture.</span></div>
+   <div class="card"><small>02</small><b>A real voice</b><span>Design the voice and pacing with ElevenLabs, bilingual from day one.</span></div>
+   <div class="card"><small>03</small><b>Tested like before</b><span>Run it through the same real-call scenarios that stopped the last voice agent.</span></div>
+   <div class="card"><small>04</small><b>Humans close</b><span>Every call hands off to a person whenever the moment needs one.</span></div>
   </div>
   <div class="sig"><div><div class="script">Manuela</div><div style="font-size:14px;opacity:.7;margin-top:6px">Manuela Gonzalez Piper · Product Manager</div></div>
    <p>Built at SNAP Insurance together with our vendor partner Inaza. Screens and data on this page are recreated for illustration; no real customer information is shown.</p></div>
@@ -319,7 +436,10 @@ section.layer{padding:120px 0;position:relative}
 
 <script>
 (function(){
- var secs=[].slice.call(document.querySelectorAll('[data-depth]')),max=11,mn=document.getElementById('mn'),mf=document.getElementById('mf');
+/*BGJS*/
+ function bg(){var st=[["0","#ffffff"],["1","#ffffff"],["2","#f4f4f5"],["3","#e4e4e7"],["4","#d4d4d8"],["5","#27272a"],["6","#1c1c1f"],["7","#18181b"],["8","#151515"],["9","#121214"],["10","#0f0f11"],["11","#09090b"],["12","#09090b"]];var H=document.documentElement.scrollHeight,g=[];st.forEach(function(x){var el=document.querySelector('[data-depth="'+x[0]+'"]');if(!el)return;var t=el.offsetTop/H*100,b=(el.offsetTop+el.offsetHeight)/H*100;g.push(x[1]+' '+t.toFixed(2)+'%',x[1]+' '+(t+(b-t)*0.6).toFixed(2)+'%')});document.body.style.background='linear-gradient(180deg,'+g.join(',')+')';}
+ bg();window.addEventListener('resize',bg);window.addEventListener('load',bg);
+ var secs=[].slice.call(document.querySelectorAll('[data-depth]')),max=12,mn=document.getElementById('mn'),mf=document.getElementById('mf');
  function upd(){var y=window.innerHeight*0.5,cur=secs[0];secs.forEach(function(s){if(s.getBoundingClientRect().top<y)cur=s});mn.textContent=cur.getAttribute('data-label');mf.style.height=(Math.min(+cur.getAttribute('data-depth'),max)/max*100)+'%';}
  window.addEventListener('scroll',upd,{passive:true});upd();
  var rv=[].slice.call(document.querySelectorAll('.rv'));
