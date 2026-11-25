@@ -189,6 +189,18 @@ section.layer{padding:120px 0;position:relative}
 .steps .card span{font-size:13px;opacity:.7;line-height:1.45}
 @media (max-width:860px){.rgrid,.big,.spectrum,.steps{grid-template-columns:1fr}.donutwrap{flex-direction:column;align-items:flex-start}.ado td{white-space:normal}}
 
+
+.snapbtn{display:inline-flex;align-items:center;gap:10px;height:40px;padding:0 14px 0 16px;border-radius:100px;background:#101d30;color:#fff;text-decoration:none;font-size:13px;font-weight:500;box-shadow:0 8px 20px -10px rgba(16,29,48,.6);transition:transform .25s ease,box-shadow .25s ease}
+.snapbtn img{height:16px;width:auto;display:block;transition:transform .35s cubic-bezier(.3,1.6,.5,1)}
+.snapbtn .arr{opacity:.7;transition:transform .25s}
+.snapbtn:hover{transform:translateY(-2px);box-shadow:0 14px 28px -12px rgba(16,29,48,.7)}
+.snapbtn:hover img{transform:translateX(4px)}
+.snapbtn:hover .arr{transform:translate(2px,-2px)}
+.snapbtn:focus-visible{outline:2px solid #09090b;outline-offset:3px}
+@keyframes dash{0%,100%{transform:translateX(0)}50%{transform:translateX(3px)}}
+.snapbtn.run img{animation:dash 2.4s ease-in-out infinite}
+.snapbtn.run:hover img{animation:none}
+@media (prefers-reduced-motion:reduce){.snapbtn.run img{animation:none}}
 /* reveal */
 .rv{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
 .rv.in{opacity:1;transform:none}
@@ -211,7 +223,7 @@ section.layer{padding:120px 0;position:relative}
 <header class="hero" data-depth="0" data-label="Surface">
  <div class="wrap">
   <div>
-   <span class="kicker"><span class="d"></span>Case study · SNAP Insurance · 2025–2026</span>
+   <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap"><a class="snapbtn run" href="https://www.snapmga.com" target="_blank" rel="noopener" aria-label="Visit SNAP Insurance website"><img src="https://www.snapmga.com/images/logo-white.png" alt="SNAP Insurance" onerror="this.replaceWith(document.createTextNode('SNAP'))"><span class="arr">↗</span></a><span class="kicker"><span class="d"></span>Case study · 2025–2026</span></div>
    <h1>Everything behind a <span class="script">simple</span> form</h1>
    <p class="lede">This is the page a driver sees after a car accident. One calm question in English or Spanish. Scroll down and I'll take you through the ten layers they never have to think about.</p>
    <div class="scrollcue"><span></span>Scroll to go deeper</div>
@@ -430,7 +442,7 @@ section.layer{padding:120px 0;position:relative}
    <div class="card"><small>04</small><b>Humans close</b><span>Every call hands off to a person whenever the moment needs one.</span></div>
   </div>
   <div class="sig"><div><div class="script">Manuela</div><div style="font-size:14px;opacity:.7;margin-top:6px">Manuela Gonzalez Piper · Product Manager</div></div>
-   <p>Built at SNAP Insurance together with our vendor partner Inaza. Screens and data on this page are recreated for illustration; no real customer information is shown.</p></div>
+   <p style="display:flex;flex-direction:column;gap:12px;align-items:flex-start"><a class="snapbtn" href="https://www.snapmga.com" target="_blank" rel="noopener" aria-label="Visit SNAP Insurance website"><img src="https://www.snapmga.com/images/logo-white.png" alt="SNAP Insurance" onerror="this.replaceWith(document.createTextNode('SNAP'))"><span class="arr">↗</span></a><span>Built at SNAP Insurance together with our vendor partner Inaza. Screens and data on this page are recreated for illustration; no real customer information is shown.</span></p></div>
  </div>
 </section>
 
